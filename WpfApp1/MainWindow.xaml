@@ -1,0 +1,45 @@
+﻿<Window x:Class="MatrixPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MatrixPanel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="680" Background="#FFF1F1F1">
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="270*"/>
+            <RowDefinition Height="129*"/>
+        </Grid.RowDefinitions>
+
+        <Menu VerticalAlignment="Top" Margin="0" VerticalContentAlignment="Center" Height="18">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Copy" Command="Copy"/>
+                <MenuItem Header="C_ut" Command="Cut"/>
+                <MenuItem Header="_Paste" Command="Paste"/>
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem  Header="_Wordwrap" IsCheckable="True"  x:Name="menuItemWordWrap" />
+            </MenuItem>
+        </Menu>
+        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible" Background="#FFF0F0F0">
+            <StackPanel>
+                <Canvas x:Name="matrixCanvas"/>
+            </StackPanel>
+        </ScrollViewer>
+        <TabControl Margin="0" Grid.Row="2" VerticalContentAlignment="Stretch">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" Margin="0,0,10,10" Click="Button_Click" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
